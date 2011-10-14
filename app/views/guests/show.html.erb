@@ -1,0 +1,16 @@
+<% title "Guest" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @guest.name %>
+</p>
+<p>
+  <strong>Locator:</strong>
+  <%= @guest.locator %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_guest_path(@guest) %> |
+  <%= link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", guests_path %>
+</p>

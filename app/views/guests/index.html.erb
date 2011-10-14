@@ -1,0 +1,19 @@
+<% title "Guests" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Locator</th>
+  </tr>
+  <% for guest in @guests %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.locator %></td>
+      <td><%= link_to "Show", guest %></td>
+      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Guest", new_guest_path %></p>
