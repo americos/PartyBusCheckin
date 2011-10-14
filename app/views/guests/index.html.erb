@@ -1,9 +1,16 @@
 <% title "Guests" %>
 
+<%= form_tag guests_path, :method => 'get' do %>
+	<p>
+	  <%= text_field_tag :search, params[:search] %>
+	  <%= submit_tag "Search", :name => nil%>
+	</p>
+<% end %>
+
 <table>
   <tr>
-    <th>Name</th>
-    <th>Locator</th>
+    <th>Guest Name</th>
+    <th>Record Locator</th>
   </tr>
   <% for guest in @guests %>
     <tr>

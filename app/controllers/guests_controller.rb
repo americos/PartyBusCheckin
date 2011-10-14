@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all
+    @guests = Guest.search(params[:search])
   end
 
   def show
@@ -38,4 +38,6 @@ class GuestsController < ApplicationController
     @guest.destroy
     redirect_to guests_url, :notice => "Successfully destroyed guest."
   end
+  
+  
 end
