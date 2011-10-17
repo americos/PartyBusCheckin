@@ -3,7 +3,11 @@ class GuestsController < ApplicationController
   
   
   def index
-    @guests = Guest.search(params[:search])
+    if params[:checkedin]
+      @guests = Guest.checkedin(params[:checkedin].to_bool)
+    else
+      @guests = Guest.search(params[:search])
+    end
   end
 
   def show

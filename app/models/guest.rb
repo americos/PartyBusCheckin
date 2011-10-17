@@ -7,7 +7,9 @@ class Guest < ActiveRecord::Base
     else
       @guests = Guest.find(:all)
     end
-    
   end
   
+  def self.checkedin(value)
+    @guests = Guest.find(:all, :conditions => ['checked_in = ?', value])
+  end
 end
