@@ -16,11 +16,10 @@
     <tr>
       <td><%= guest.name %></td>
       <td><%= guest.locator %></td>
-      <td><%= link_to "Show", guest %></td>
-      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
-      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Details", guest %></td>
     </tr>
   <% end %>
 </table>
 
 <p><%= link_to "New Guest", new_guest_path %></p>
+<p><%= link_to "View All", guests_path %></p>
