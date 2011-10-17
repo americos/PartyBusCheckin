@@ -9,4 +9,5 @@ class Guest < ActiveRecord::Base
     end
     
   end
+  
 end

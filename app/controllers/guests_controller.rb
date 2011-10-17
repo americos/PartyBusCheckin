@@ -1,10 +1,13 @@
 class GuestsController < ApplicationController
+  before_filter :find_guest, :only => [:show, :edit, :update, :destroy, :checkedin, :uncheckedin]
+  
+  
   def index
     @guests = Guest.search(params[:search])
   end
 
   def show
-    @guest = Guest.find(params[:id])
+    
   end
 
   def new
@@ -21,11 +24,10 @@ class GuestsController < ApplicationController
   end
 
   def edit
-    @guest = Guest.find(params[:id])
+    
   end
 
   def update
-    @guest = Guest.find(params[:id])
     if @guest.update_attributes(params[:guest])
       redirect_to @guest, :notice  => "Successfully updated guest."
     else
@@ -34,10 +36,33 @@ class GuestsController < ApplicationController
   end
 
   def destroy
-    @guest = Guest.find(params[:id])
     @guest.destroy
     redirect_to guests_url, :notice => "Successfully destroyed guest."
   end
   
+  def checkedin
+    checkIn(true)
+    redirect_to guests_url, :notice => "Guest was succussfully checked in!"
+  end
+  
+  def uncheckedin
+    checkIn(false)
+    redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
+  end
+  
+  
+  private 
+    def find_guest
+      @guest = Guest.find(params[:id])
+    end
+  
+    def checkIn(value)
+      if value
+        @guest.checked_in = true 
+      else
+        @guest.checked_in = false
+      end 
+      @guest.save
+    end
   
 end

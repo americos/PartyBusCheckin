@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111014160409) do
+ActiveRecord::Schema.define(:version => 20111017192612) do
 
   create_table "guests", :force => true do |t|
     t.string   "name"
     t.string   "locator"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "checked_in", :default => false
   end
 
 end

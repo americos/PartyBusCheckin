@@ -73,3 +73,7 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+.checked_in{
+	color: #00DD00;
+}

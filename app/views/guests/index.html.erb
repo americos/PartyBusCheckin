@@ -11,11 +11,24 @@
   <tr>
     <th>Guest Name</th>
     <th>Record Locator</th>
+	<th>Checked In</th>
+	<th>UnChecked In</th>
   </tr>
   <% for guest in @guests %>
     <tr>
       <td><%= guest.name %></td>
       <td><%= guest.locator %></td>
+		
+		<% if guest.checked_in? then %>
+			<td class="checked_in">Yes!</td>
+			<td><%= link_to "Uncheck In", uncheckedin_url(:id => guest.id) %></td>
+		<% else %>
+			<td><%= link_to "Check In", checkedin_url(:id => guest.id) %></td>
+			<td></td>
+		<% end %>
+	  
+		
+	
       <td><%= link_to "Details", guest %></td>
     </tr>
   <% end %>
