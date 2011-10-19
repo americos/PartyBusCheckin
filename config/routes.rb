@@ -3,6 +3,8 @@ PartyBusCheckin::Application.routes.draw do
   match 'checkedin/:id' => 'guests#checkedin', :as=> :checkedin
   match 'uncheckedin/:id' => 'guests#uncheckedin', :as=> :uncheckedin
 
+  match 'guestgroup' => 'guests#guestgroup', :as => :guestgroup
+
   resources :guests
   
   root :to => "home#index"

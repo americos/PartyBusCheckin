@@ -33,7 +33,7 @@ class GuestsController < ApplicationController
 
   def update
     if @guest.update_attributes(params[:guest])
-      redirect_to @guest, :notice  => "Successfully updated guest."
+      redirect_to guests_url, :notice  => "Successfully updated guest."
     else
       render :action => 'edit'
     end
@@ -52,6 +52,15 @@ class GuestsController < ApplicationController
   def uncheckedin
     checkIn(false)
     redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
+  end
+  
+  def guestgroup
+    if params[:guestgroup]
+      Guest.createGuestGroup(params[:guestgroup])
+      
+      redirect_to guests_url  
+    end
+    
   end
   
   

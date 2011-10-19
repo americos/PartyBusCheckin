@@ -12,6 +12,7 @@
     <th>Guest Name</th>
 	<th>Tickets Bought</th>
     <th>Record Locator</th>
+	<th>Event Date</th>
 	<th>Checked In</th>
 	<th>UnChecked In</th>
   </tr>
@@ -20,7 +21,7 @@
       <td><%= guest.name %></td>
 	  <td><%= guest.tickets_bought %></td>      
 	  <td><%= guest.locator %></td>
-	  	
+	  <td><%= guest.event_date %></td>
 		<% if guest.checked_in? then %>
 			<td class="checked_in">Yes!</td>
 			<td><%= link_to "Uncheck In", uncheckedin_url(:id => guest.id) %></td>
@@ -30,11 +31,14 @@
 		<% end %>
 	  
       <td><%= link_to "Details", guest %></td>
+	  <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+	  <td><%= link_to "Delete", guest, :confirm => "Are you sure?", :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
 <p><%= link_to "New Guest", new_guest_path %></p>
+<p><%= link_to "New Guest List", guestgroup_path %></p>
 <p><%= link_to "View All Checked In", guests_path(:checkedin => true) %></p>
 <p><%= link_to "View All UnChecked In", guests_path(:checkedin => false) %></p>
 <p><%= link_to "View All", guests_path %></p>

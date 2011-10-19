@@ -1,0 +1,18 @@
+<h2>Guest Group</h2>
+<h3> Instructions: Copy and paste</h3>
+
+<p>
+	Sample: <br/>
+	<pre>
+  Jonathan Edge (1 tix - ZCLCMT)
+  Sara Pappa (1 tix - BIHJPB)
+  Mason Barret (1 tix - AMXZZY)
+	</pre>
+</p>
+
+<%= form_tag guestgroup_path do %>
+	<p>
+		<%= text_area_tag :guestgroup, nil, :rows => 30, :cols => 50 %>
+	</p>
+	<%= submit_tag "Add Guests", :name => nil %>
+<% end %>
