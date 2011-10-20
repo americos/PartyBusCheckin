@@ -18,7 +18,11 @@
   </tr>
   <% for guest in @guests %>
     <tr>
-      <td><%= guest.name %></td>
+	  <% if guest.checked_in? then %>
+      	<td class="checked_in"><%= guest.name %></td>
+	  <% else %>
+		<td><%= guest.name %></td>
+	  <% end %>
 	  <td><%= guest.tickets_bought %></td>      
 	  <td><%= guest.locator %></td>
 	  <td><%= guest.event_date %></td>
