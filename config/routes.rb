@@ -4,6 +4,8 @@ PartyBusCheckin::Application.routes.draw do
   match 'uncheckedin/:id' => 'guests#uncheckedin', :as=> :uncheckedin
 
   match 'guestgroup' => 'guests#guestgroup', :as => :guestgroup
+  
+  match 'deleteguests' => 'guests#deleteguests', :as => :deleteguests
 
   resources :guests
   

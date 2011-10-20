@@ -56,11 +56,15 @@ class GuestsController < ApplicationController
   
   def guestgroup
     if params[:guestgroup]
-      Guest.createGuestGroup(params[:guestgroup])
+      Guest.createGuestGroup(params[:guestgroup], params[:event_date])
       
       redirect_to guests_url  
     end
-    
+  end
+  
+  def deleteguests
+    @Guests = Guest.delete_all
+    redirect_to guests_url
   end
   
   

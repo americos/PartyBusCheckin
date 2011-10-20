@@ -13,8 +13,8 @@ class Guest < ActiveRecord::Base
     @guests = Guest.find(:all, :conditions => ['checked_in = ?', value])
   end
   
-  #Do logic to parse guest group
-  def self.createGuestGroup(group)
+  #Logic to parse guest group
+  def self.createGuestGroup(group, event_date)
     
     arr = group.split(/\n/)
 
@@ -31,8 +31,9 @@ class Guest < ActiveRecord::Base
       p name
       p num_tickets
       p locator
+      p event_date
       
-      Guest.create!(:name => name, :tickets_bought => num_tickets, :locator => locator)
+      Guest.create!(:name => name, :tickets_bought => num_tickets, :locator => locator, :event_date => event_date)
     end
   end
   

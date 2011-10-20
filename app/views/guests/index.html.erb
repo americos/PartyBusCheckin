@@ -42,3 +42,4 @@
 <p><%= link_to "View All Checked In", guests_path(:checkedin => true) %></p>
 <p><%= link_to "View All UnChecked In", guests_path(:checkedin => false) %></p>
 <p><%= link_to "View All", guests_path %></p>
+<p><%= link_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" %></p>

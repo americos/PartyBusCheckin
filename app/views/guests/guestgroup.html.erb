@@ -14,5 +14,8 @@
 	<p>
 		<%= text_area_tag :guestgroup, nil, :rows => 30, :cols => 50 %>
 	</p>
+	<p>
+		Event Date:<%= text_field_tag :event_date, "10/21/2011" %>
+	</p>
 	<%= submit_tag "Add Guests", :name => nil %>
 <% end %>
