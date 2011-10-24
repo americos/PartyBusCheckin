@@ -1,0 +1,1 @@
+p "Americo Es".index 'o'
