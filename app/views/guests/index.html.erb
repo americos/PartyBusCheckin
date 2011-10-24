@@ -7,25 +7,31 @@
 	</p>
 <% end %>
 
+<p>
+Guests for:
+</p>
+
 <table>
   <tr>
     <th>Guests</th>
 	<th>Tickets</th>
     <%# <th>Record Locator</th> %>
-	<th>Date</th>
+	<%# <th>Date</th>%>
 	<th>Check In</th>
 	<th>UnCheck In</th>
   </tr>
   <% for guest in @guests %>
     <tr>
+	
 	  <% if guest.checked_in? then %>
       	<td class="checked_in"><%= guest.name %></td>
 	  <% else %>
 		<td><%= guest.name %></td>
 	  <% end %>
+	
 	  <td><%= guest.tickets_bought %></td>      
 	  <%# <td><%= guest.locator ></td>%>
-	  <td><%= guest.event_date %></td>
+	  <%#<td><%= guest.event_date ></td> %>
 		<% if guest.checked_in? then %>
 			<td class="checked_in">Yes!</td>
 			<td><%= link_to "Uncheck In", uncheckedin_url(:id => guest.id) %></td>
@@ -34,7 +40,7 @@
 			<td></td>
 		<% end %>
 	  
-      <td><%= link_to "Details", guest %></td>
+      <%#<td><%= link_to "Details", guest ></td>%>
 	  <%# <td><%= link_to "Edit", edit_guest_path(guest) ></td>%>
 	  <%#<td><%= link_to "Delete", guest, :confirm => "Are you sure?", :method => :delete ></td> %>
     </tr>
