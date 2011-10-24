@@ -3,9 +3,9 @@ class Guest < ActiveRecord::Base
   
   def self.search(search)
     if search
-      @guests = Guest.find(:all, :conditions => [ 'name LIKE ? ', "%#{search}%"])
+      @guests = Guest.order(:name).find(:all, :conditions => [ 'name ILIKE ?', "%#{search}%"]) #ILIKE is the Postgres way for case insensitive
     else
-      @guests = Guest.find(:all)
+      @guests = Guest.order(:name).find(:all)
     end
   end
   

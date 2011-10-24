@@ -9,12 +9,12 @@
 
 <table>
   <tr>
-    <th>Guest Name</th>
-	<th>Tickets Bought</th>
-    <th>Record Locator</th>
-	<th>Event Date</th>
-	<th>Checked In</th>
-	<th>UnChecked In</th>
+    <th>Guest</th>
+	<th>Tickets</th>
+    <%# <th>Record Locator</th> %>
+	<th>Date</th>
+	<th>Check In</th>
+	<th>UnCheck In</th>
   </tr>
   <% for guest in @guests %>
     <tr>
@@ -24,7 +24,7 @@
 		<td><%= guest.name %></td>
 	  <% end %>
 	  <td><%= guest.tickets_bought %></td>      
-	  <td><%= guest.locator %></td>
+	  <%# <td><%= guest.locator ></td>%>
 	  <td><%= guest.event_date %></td>
 		<% if guest.checked_in? then %>
 			<td class="checked_in">Yes!</td>
