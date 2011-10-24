@@ -3,6 +3,7 @@ class GuestsController < ApplicationController
   
   
   def index
+    @guest = Guest.first
     if params[:checkedin]
       @guests = Guest.checkedin(params[:checkedin].to_bool)
     else
