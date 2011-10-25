@@ -9,6 +9,7 @@ class GuestsController < ApplicationController
     else
       @guests = Guest.search(params[:search])
     end
+    
   end
 
   def show
@@ -47,12 +48,12 @@ class GuestsController < ApplicationController
   
   def checkedin
     checkIn(true)
-    redirect_to guests_url, :notice => "Guest was succussfully checked in!"
+    #redirect_to guests_url, :notice => "Guest was succussfully checked in!"
   end
   
   def uncheckedin
     checkIn(false)
-    redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
+    #redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
   end
   
   def guestgroup
@@ -81,6 +82,11 @@ class GuestsController < ApplicationController
         @guest.checked_in = false
       end 
       @guest.save
+      
+      respond_to do |format|
+        format.html { redirect_to guests_url }
+        format.js
+      end
     end
   
 end

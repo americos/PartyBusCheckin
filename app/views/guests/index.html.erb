@@ -25,7 +25,7 @@ Guests for: <i><%= @guest.event_date %></i>
 	<th>UnCheck In</th>
   </tr>
   <% for guest in @guests %>
-    <tr>
+    <tr id="guest_<%= guest.id %>">
 	
 	  <% if guest.checked_in? then %>
       	<td class="checked_in"><%= guest.name %></td>
@@ -38,9 +38,9 @@ Guests for: <i><%= @guest.event_date %></i>
 	  <%#<td><%= guest.event_date ></td> %>
 		<% if guest.checked_in? then %>
 			<td class="checked_in">Yes!</td>
-			<td><%= link_to "Uncheck In", uncheckedin_url(:id => guest.id) %></td>
+			<td><%= link_to "Uncheck In", uncheckedin_guest_url(:id => guest.id) %></td>
 		<% else %>
-			<td><%= link_to "Check In", checkedin_url(:id => guest.id) %></td>
+			<td><%= link_to "Check In", checkedin_guest_url(:id => guest.id) %></td>
 			<td></td>
 		<% end %>
 	  

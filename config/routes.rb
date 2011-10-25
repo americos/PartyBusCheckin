@@ -1,13 +1,13 @@
 PartyBusCheckin::Application.routes.draw do
 
-  match 'checkedin/:id' => 'guests#checkedin', :as=> :checkedin
-  match 'uncheckedin/:id' => 'guests#uncheckedin', :as=> :uncheckedin
-
   match 'guestgroup' => 'guests#guestgroup', :as => :guestgroup
   
   match 'deleteguests' => 'guests#deleteguests', :as => :deleteguests
 
-  resources :guests
+  resources :guests do
+    get :checkedin, on: :member
+    get :uncheckedin, on: :member
+  end
   
   root :to => "guests#index"
 
