@@ -69,6 +69,10 @@ class GuestsController < ApplicationController
     redirect_to guests_url
   end
   
+  def uncheckall
+    Guest.uncheckall
+    redirect_to guests_url
+  end
   
   private 
     def find_guest

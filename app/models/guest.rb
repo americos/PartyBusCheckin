@@ -37,4 +37,8 @@ class Guest < ActiveRecord::Base
     end
   end
   
+  def self.uncheckall
+    @guests = Guest.update_all("checked_in = false")
+  end
+  
 end

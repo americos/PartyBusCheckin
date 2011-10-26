@@ -38,9 +38,9 @@ Guests for: <i><%= @guest.event_date %></i>
 	  <%#<td><%= guest.event_date ></td> %>
 		<% if guest.checked_in? then %>
 			<td class="checked_in">Yes!</td>
-			<td><%= link_to "Uncheck In", uncheckedin_guest_url(:id => guest.id) %></td>
+			<td><%= link_to "Uncheck In", uncheckedin_guest_path(:id => guest.id) %></td>
 		<% else %>
-			<td><%= link_to "Check In", checkedin_guest_url(:id => guest.id) %></td>
+			<td><%= link_to "Check In", checkedin_guest_path(:id => guest.id) %></td>
 			<td></td>
 		<% end %>
 	  
@@ -51,9 +51,10 @@ Guests for: <i><%= @guest.event_date %></i>
   <% end %>
 </table>
 
-<p><%= link_to "New Guest", new_guest_path %></p>
+<%#<p><%= link_to "New Guest", new_guest_path ></p>%>
 <p><%= link_to "New Guest List", guestgroup_path %></p>
 <p><%= link_to "View All Checked In", guests_path(:checkedin => true) %></p>
 <p><%= link_to "View All UnChecked In", guests_path(:checkedin => false) %></p>
 <p><%= link_to "View All", guests_path %></p>
+<p><%= link_to "Uncheck All", uncheckall_path %></p>
 <p><%= link_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" %></p>
