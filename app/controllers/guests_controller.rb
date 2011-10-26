@@ -47,13 +47,13 @@ class GuestsController < ApplicationController
   end
   
   def checkedin
-    checkIn(true)
-    #redirect_to guests_url, :notice => "Guest was succussfully checked in!"
+    Guest.checkIn(@guest, true)
+    redirect_to guests_url, :notice => "Guest was succussfully checked in!"
   end
   
   def uncheckedin
-    checkIn(false)
-    #redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
+    Guest.checkIn(@guest, false)
+    redirect_to guests_url, :notice => "Guest was succussfully Unchecked in!"
   end
   
   def guestgroup
@@ -77,20 +77,6 @@ class GuestsController < ApplicationController
   private 
     def find_guest
       @guest = Guest.find(params[:id])
-    end
-  
-    def checkIn(value)
-      if value
-        @guest.checked_in = true 
-      else
-        @guest.checked_in = false
-      end 
-      @guest.save
-      
-      respond_to do |format|
-        format.html { redirect_to guests_url }
-        format.js
-      end
     end
   
 end

@@ -37,6 +37,21 @@ class Guest < ActiveRecord::Base
     end
   end
   
+  def self.checkIn(guest, value)
+    if value
+      guest.checked_in = true 
+    else
+      guest.checked_in = false
+    end 
+    guest.save
+    
+    # respond_to do |format|
+    #       format.html { redirect_to guests_url }
+    #       format.js
+    #     end
+  end
+  
+  
   def self.uncheckall
     @guests = Guest.update_all("checked_in = false")
   end
