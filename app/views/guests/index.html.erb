@@ -11,50 +11,67 @@
 	</p>
 <% end %>
 
-<p>
-Guests for: <i><%= @guest.event_date %></i>
-</p>
+<%# If there is at least 1 guest%>
+<% if @guest %>
+  <p>
+    Guests for: <i><%= @guest.event_date %></i>
+	
+	<table>
+	  <tr>
+	    <th>Guests</th>
+		<th>Tickets</th>
+	    <%# <th>Record Locator</th> %>
+		<%# <th>Date</th>%>
+		<th>Check In</th>
+		<th>UnCheck In</th>
+	  </tr>
+	  <% for guest in @guests %>
+	    <tr id="guest_<%= guest.id %>">
 
-<table>
-  <tr>
-    <th>Guests</th>
-	<th>Tickets</th>
-    <%# <th>Record Locator</th> %>
-	<%# <th>Date</th>%>
-	<th>Check In</th>
-	<th>UnCheck In</th>
-  </tr>
-  <% for guest in @guests %>
-    <tr id="guest_<%= guest.id %>">
-	
-	  <% if guest.checked_in? then %>
-      	<td class="checked_in"><%= guest.name %></td>
-	  <% else %>
-		<td><%= guest.name %></td>
+		  <% if guest.checked_in? then %>
+	      	<td class="checked_in"><%= guest.name %></td>
+		  <% else %>
+			<td><%= guest.name %></td>
+		  <% end %>
+
+		  <td><%= guest.tickets_bought %></td>      
+		  <%# <td><%= guest.locator ></td>%>
+		  <%#<td><%= guest.event_date ></td> %>
+			<% if guest.checked_in? then %>
+				<td class="checked_in">Yes!</td>
+				<td><%= link_to "Uncheck In", uncheckedin_guest_path(:id => guest.id) %></td>
+			<% else %>
+				<td><%= link_to "Check In", checkedin_guest_path(:id => guest.id) %></td>
+				<td></td>
+			<% end %>
+
+	      <%#<td><%= link_to "Details", guest ></td>%>
+		  <%# <td><%= link_to "Edit", edit_guest_path(guest) ></td>%>
+		  <%#<td><%= link_to "Delete", guest, :confirm => "Are you sure?", :method => :delete ></td> %>
+	    </tr>
 	  <% end %>
-	
-	  <td><%= guest.tickets_bought %></td>      
-	  <%# <td><%= guest.locator ></td>%>
-	  <%#<td><%= guest.event_date ></td> %>
-		<% if guest.checked_in? then %>
-			<td class="checked_in">Yes!</td>
-			<td><%= link_to "Uncheck In", uncheckedin_guest_path(:id => guest.id) %></td>
-		<% else %>
-			<td><%= link_to "Check In", checkedin_guest_path(:id => guest.id) %></td>
-			<td></td>
-		<% end %>
-	  
-      <%#<td><%= link_to "Details", guest ></td>%>
-	  <%# <td><%= link_to "Edit", edit_guest_path(guest) ></td>%>
-	  <%#<td><%= link_to "Delete", guest, :confirm => "Are you sure?", :method => :delete ></td> %>
-    </tr>
-  <% end %>
-</table>
+	</table>
+
+  </p>
+<% else %>
+  <p>No Guests on list</p>
+<% end %>
+
 
 <%#<p><%= link_to "New Guest", new_guest_path ></p>%>
-<p><%= link_to "New Guest List", guestgroup_path %></p>
-<p><%= link_to "View All Checked In", guests_path(:checkedin => true) %></p>
-<p><%= link_to "View All UnChecked In", guests_path(:checkedin => false) %></p>
-<p><%= link_to "View All", guests_path %></p>
-<p><%= link_to "Uncheck All", uncheckall_path %></p>
-<p><%= link_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" %></p>
+<%#<p><%= link_to "New Guest List", guestgroup_path ></p>%>
+<%#<p><%= link_to "View All Checked In", guests_path(:checkedin => true) ></p>%>
+<%#<p><%= link_to "View All UnChecked In", guests_path(:checkedin => false) ></p>%>
+<%#<p><%= link_to "View All", guests_path ></p>%>
+<%#<p><%= link_to "Uncheck All", uncheckall_path ></p>%>
+<%#<p><%= link_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" ></p>%>
+
+<p><%= button_to "View All", guests_path, method: :get %></p>
+<p><%= button_to "View All Checked In", guests_path(:checkedin => true), method: :get %></p>
+<p><%= button_to "View All UnChecked In", guests_path(:checkedin => false), method: :get %></p>
+
+<p><%= button_to "New Guest List", guestgroup_path %></p>
+<p><%= button_to "Uncheck All", uncheckall_path %></p>
+<p><%= button_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" %></p>
+
+
