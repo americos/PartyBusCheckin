@@ -18,12 +18,12 @@
 	
 	<table>
 	  <tr>
-	    <th>Guests</th>
-		<th>Tickets</th>
+	    <th>Guest</th>
+		<th># Tickets</th>
 	    <%# <th>Record Locator</th> %>
 		<%# <th>Date</th>%>
-		<th>Check In</th>
-		<th>UnCheck In</th>
+		<th></th> <!-- Checkin-->
+		<th></th> <!-- UnCheckin-->
 	  </tr>
 	  <% for guest in @guests %>
 	    <tr id="guest_<%= guest.id %>">
@@ -71,7 +71,7 @@
 <p><%= button_to "View All UnChecked In", guests_path(:checkedin => false), method: :get %></p>
 
 <p><%= button_to "New Guest List", guestgroup_path %></p>
-<p><%= button_to "Uncheck All", uncheckall_path %></p>
+<p><%= button_to "Uncheck All", uncheckall_path, :confirm => "All guests will be marked as NOT CHECKED IN, are you sure?" %></p>
 <p><%= button_to "Delete All", deleteguests_path, :confirm => "ALL GUESTS WILL BE DELETED, ARE YOU SURE?" %></p>
 
 
