@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>test/Test_sort_string.rb</string>
+	<string>test/QuickRubyTest.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,89 +21,35 @@
 	<integer>288</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Gemfile</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>18</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/controllers/guests_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>40</integer>
-				<key>line</key>
-				<integer>58</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>36</integer>
-		</dict>
 		<key>app/models/guest.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>33</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/views/guests/guestgroup.html.erb</key>
-		<dict>
-			<key>caret</key>
+			<integer>5</integer>
+			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>6</integer>
 				<key>line</key>
-				<integer>16</integer>
+				<integer>21</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/views/guests/index.html.erb</key>
-		<dict>
-			<key>caret</key>
+			<key>selectTo</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>23</integer>
+				<integer>33</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/routes.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>28</integer>
-				<key>line</key>
-				<integer>11</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
 		</dict>
 		<key>test/QuickRubyTest.rb</key>
 		<dict>
@@ -112,38 +58,18 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>test/Test_sort_string.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>24</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>-1</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>config/routes.rb</string>
-		<string>test/QuickRubyTest.rb</string>
-		<string>test/Test_sort_string.rb</string>
-		<string>app/views/guests/index.html.erb</string>
-		<string>app/controllers/guests_controller.rb</string>
-		<string>Gemfile</string>
-		<string>app/views/guests/guestgroup.html.erb</string>
 		<string>app/models/guest.rb</string>
+		<string>test/QuickRubyTest.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
@@ -161,6 +87,21 @@
 					<true/>
 					<key>subItems</key>
 					<dict>
+						<key>assets</key>
+						<dict>
+							<key>isExpanded</key>
+							<true/>
+							<key>subItems</key>
+							<dict>
+								<key>javascripts</key>
+								<dict>
+									<key>isExpanded</key>
+									<true/>
+									<key>subItems</key>
+									<dict/>
+								</dict>
+							</dict>
+						</dict>
 						<key>controllers</key>
 						<dict>
 							<key>isExpanded</key>
@@ -182,6 +123,13 @@
 							<key>subItems</key>
 							<dict>
 								<key>guests</key>
+								<dict>
+									<key>isExpanded</key>
+									<true/>
+									<key>subItems</key>
+									<dict/>
+								</dict>
+								<key>layouts</key>
 								<dict>
 									<key>isExpanded</key>
 									<true/>

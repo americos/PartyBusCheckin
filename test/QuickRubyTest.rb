@@ -1,21 +1,27 @@
 list = "Jonathan Edge (1 tix - ZCLCMT)
 Sara Pappa (1 tix - BIHJPB)
-Mason Barret (14 tix - AMXZZY)"
+Mason Barret (14 tix - AMXZZY)
+Brandi J Chavis (1 tix - ESQNUW)"
 
 arr = list.split(/\n/)
 
 arr.each do |i|
-  #now I have all every record in token
-  tokens = i.split
-  name = tokens[0] + " " + tokens[1]
-  #replace "(" with empty string to get the tickets
-  num_tickets = tokens[2].tr_s('(', '')
-  #
-  locator = tokens[5].tr_s(')', '')
-  #p tokens
+  tokens = i.split("(")
+  tix_locator = tokens[1] #e.g. "1 tix - SSSAAA"
+  # p tokens
+  #Name
+  name = tokens[0]
+  tix_locator_split = tix_locator.split
+  #Number of Tickets
+  num_tickets = tix_locator_split[0]
+  #Locator
+  locator = tix_locator_split[3].chomp(")") #To remove last ')'
   
-  p name
-  p num_tickets
-  p locator
+    p "==Creating Guest=="
+    p name
+    p num_tickets
+    p locator
+
+  
 end
 
