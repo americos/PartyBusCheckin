@@ -10,10 +10,10 @@ gem 'rails', '3.1.0'
 #   gem 'pg'
 # end
 # 
-# group :development, :test do
-#   gem 'sqlite3'
-#   gem 'pg'
-# end
+group :development, :test do
+   gem 'rspec-rails'
+   gem 'capybara'
+end
 
 gem 'pg'
 
