@@ -13,6 +13,7 @@ gem 'rails', '3.1.0'
 group :development, :test do
    gem 'rspec-rails'
    gem 'capybara'
+   gem 'factory_girl_rails'
 end
 
 gem 'pg'

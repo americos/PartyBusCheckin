@@ -14,7 +14,7 @@ class Guest < ActiveRecord::Base
   end
   
   #Logic to parse guest group
-  def self.createGuestGroup(group, event_date)
+  def self.createGuestGroup(group, event_date, guestgroup)
     
     arr = group.split(/\n/)
 
@@ -30,12 +30,12 @@ class Guest < ActiveRecord::Base
       #Locator
       locator = tix_locator_split[3].chomp(")") #To remove last ')'
 
-        p "==Creating Guest=="
-        p name
-        p num_tickets
-        p locator
+        # p "==Creating Guest=="
+        #         p name
+        #         p num_tickets
+        #         p locator
       
-      Guest.create!(:name => name, :tickets_bought => num_tickets, :locator => locator, :event_date => event_date)
+      Guest.create!(:name => name, :tickets_bought => num_tickets, :locator => locator, :event_date => event_date, :guest_group => guestgroup)
     end
   end
   

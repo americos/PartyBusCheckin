@@ -57,8 +57,12 @@ class GuestsController < ApplicationController
   end
   
   def guestgroup
+    @hosts = Host.order(:name).find(:all)
     if params[:guestgroup]
-      Guest.createGuestGroup(params[:guestgroup], params[:event_date])
+      guestgroup = Guestgroup.new(:type =>params[:type], :date => params[:event_date])
+      if guestgroup.save
+        Guest.createGuestGroup(params[:guestgroup], params[:event_date], guestgroup.id)
+      end
       
       redirect_to guests_url  
     end

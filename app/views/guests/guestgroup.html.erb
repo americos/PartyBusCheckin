@@ -12,10 +12,20 @@
 
 <%= form_tag guestgroup_path do %>
 	<p>
-		<%= text_area_tag :guestgroup, nil, :rows => 30, :cols => 50 %>
+		<%= label_tag 'guestgroup', 'Guest Group' %>
+		<%= text_area_tag "guestgroup", nil, :rows => 30, :cols => 50 %>
 	</p>
 	<p>
-		Event Date:<%= text_field_tag :event_date, "10/21/2011" %>
+		<%= label_tag "event_date", "Event Date" %>
+		<%= text_field_tag "event_date", "10/21/2011" %>
+	</p>
+	<p>
+		<%= label_tag "event_type", "Event Type" %>
+		<%= select_tag "type", "<option>NightBus</option><option>Vineyard</option>".html_safe %>
+	</p>
+	<p>
+		<%= label_tag "host", "Host" %>
+		<%= select_tag "host", options_from_collection_for_select(@hosts, "name", "name") %>
 	</p>
 	<%= submit_tag "Add Guests", :name => nil %>
 <% end %>
