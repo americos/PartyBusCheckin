@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103212258) do
+ActiveRecord::Schema.define(:version => 20111104193924) do
 
   create_table "guestgroups", :force => true do |t|
     t.string   "type"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20111103212258) do
     t.boolean  "checked_in",     :default => false
     t.integer  "tickets_bought", :default => 1
     t.string   "event_date"
-    t.integer  "guest_group"
+    t.integer  "guest_group",                       :null => false
   end
 
   create_table "hosts", :force => true do |t|

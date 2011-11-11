@@ -1,5 +1,5 @@
 class Guest < ActiveRecord::Base
-  attr_accessible :name, :locator, :tickets_bought, :event_date
+  attr_accessible :name, :locator, :tickets_bought, :event_date, :guest_group
   
   def self.search(search)
     if search
