@@ -14,7 +14,10 @@
 <%# If there is at least 1 guest%>
 <% if @guest %>
   <p>
-    Guests for: <i><%= @guest.event_date %></i>
+    <b>Guests for:</b> <i><%= @guest.event_date %></i>
+	<br/>
+	<b>Total Guests:</b> <%= @guests.count %>
+	<br/>
 	
 	<table>
 	  <tr>
