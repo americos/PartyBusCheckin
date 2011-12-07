@@ -1,9 +1,5 @@
 <% title "Guests" %>
 
-<center>
-  <h2>PartyBus Checkin!</h2>
-</center>
-
 <%= form_tag guests_path, :method => 'get' do %>
 	<p>
 	  <%= text_field_tag :search, params[:search] %>

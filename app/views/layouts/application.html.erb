@@ -14,7 +14,20 @@
 <body>
 
 <div data-role="page">
-  <%= yield %>
+	<center>
+	  <h2>PartyBus Checkin!</h2>	
+	
+	  <% if current_user %>
+		Welcome <%= current_user.name %>
+	    <%= link_to "Sign out", signout_path %>
+	
+		<%= yield %>
+	
+	  <% else %>
+		<%= link_to "Sign in", '/auth/identity' %>
+	  <% end %>
+	
+	</center>
 </div>
 </body>
 </html>

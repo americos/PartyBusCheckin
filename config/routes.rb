@@ -3,6 +3,10 @@ PartyBusCheckin::Application.routes.draw do
   match 'guestgroup' => 'guests#guestgroup', :as => :guestgroup
   match 'deleteguests' => 'guests#deleteguests', :as => :deleteguests
   match 'uncheckall' => 'guests#uncheckall', :as => :uncheckall
+  
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/signout' => 'sessions#destroy', :as => 'signout'
+#  match '/auth/failure' => 'sessions#invalidsession'
 
   resources :guests do
     get :checkedin, on: :member

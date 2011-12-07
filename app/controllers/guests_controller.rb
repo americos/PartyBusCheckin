@@ -1,7 +1,6 @@
 class GuestsController < ApplicationController
   before_filter :find_guest, :only => [:show, :edit, :update, :destroy, :checkedin, :uncheckedin]
   
-  
   def index
     @guest = Guest.first
     if params[:checkedin]

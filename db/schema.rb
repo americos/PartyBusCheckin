@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111104193924) do
+ActiveRecord::Schema.define(:version => 20111207212622) do
 
   create_table "guestgroups", :force => true do |t|
     t.string   "type"
@@ -37,11 +37,28 @@ ActiveRecord::Schema.define(:version => 20111104193924) do
     t.datetime "updated_at"
   end
 
+  create_table "identities", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pets", :force => true do |t|
     t.string   "name"
     t.string   "breed"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
   end
 
 end
