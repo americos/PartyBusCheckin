@@ -24,7 +24,19 @@
 		<%= yield %>
 	
 	  <% else %>
-		<%= link_to "Sign in", '/auth/identity' %>
+		<%#= link_to "Sign in", '/auth/identity' %>
+		<h3>Please Sign in:</h3>
+		<%= form_tag "/auth/identity/callback" do %>
+			<div class="field">
+				<%= label_tag :auth_key, "Email" %> <br>
+				<%= text_field_tag :auth_key %>
+			</div>
+			<div class="field">
+				<%= label_tag :password %> <br>
+				<%= password_field_tag :password %>
+			</div>
+			<div><%= submit_tag "Login" %></div>
+		<% end %>
 	  <% end %>
 	
 	</center>
