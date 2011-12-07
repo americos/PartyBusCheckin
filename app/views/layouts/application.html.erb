@@ -19,11 +19,16 @@
 	
 	  <% if current_user %>
 		Welcome <%= current_user.name %>
+		<!-- ONly add access to add users for me (for now)-->
+		<% if current_user.name == "Americo" %>
+			<%= link_to "Add User", '/auth/identity/register/'%>
+		<% end %>
 	    <%= link_to "Sign out", signout_path %>
 	
 		<%= yield %>
 	
 	  <% else %>
+		<%= link_to "Add User", '/auth/identity/register/'%>
 		<%#= link_to "Sign in", '/auth/identity' %>
 		<h3>Please Sign in:</h3>
 		<%= form_tag "/auth/identity/callback" do %>
