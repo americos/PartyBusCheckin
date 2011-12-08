@@ -7,7 +7,7 @@ PartyBusCheckin::Application.routes.draw do
   match '/auth/:provider/callback' => 'sessions#create'
   match '/signout' => 'sessions#destroy', :as => 'signout'
 #  match '/auth/failure' => 'sessions#invalidsession'
-
+  
   resources :guests do
     get :checkedin, on: :member
     get :uncheckedin, on: :member
@@ -15,6 +15,8 @@ PartyBusCheckin::Application.routes.draw do
   end
   
   root :to => "guests#index"
+
+  match '*a', :to => 'sessions#routingerror'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
