@@ -28,7 +28,7 @@
 		<%= yield %>
 	
 	  <% else %>
-		<%#= link_to "Sign in", '/auth/identity' %>
+		<%= link_to "Sign in", '/auth/identity' %>
 		<h3>Please Sign in:</h3>
 		<%= form_tag "/auth/identity/callback" do %>
 			<div class="field">
