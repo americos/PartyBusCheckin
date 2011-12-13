@@ -1,5 +1,13 @@
 <% title "Guests" %>
 
+<h2>IPs</h2>
+<p>
+	Your IP address is <%= @client_ip %>  <br/>
+	AG IP address is <%= @remote_ip %> <br/>
+	My Personal IP address is <%= @my_ip %> <br/>
+	IP address is <%= @ip_addr %>
+</p>
+
 <%= form_tag guests_path, :method => 'get' do %>
 	<p>
 	  <%= text_field_tag :search, params[:search] %>
