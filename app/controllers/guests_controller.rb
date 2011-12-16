@@ -2,10 +2,10 @@ class GuestsController < ApplicationController
   before_filter :find_guest, :only => [:show, :edit, :update, :destroy, :checkedin, :uncheckedin]
   
   def index
-    @client_ip = request.remote_ip
-      @remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
-      @my_ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_addr
-      @ip_addr = request.env['REMOTE_ADDR']
+     # @client_ip = request.remote_ip
+     #       @remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
+     #       @my_ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_addr
+     #       @ip_addr = request.env['REMOTE_ADDR']
     
     
     @guest = Guest.first
