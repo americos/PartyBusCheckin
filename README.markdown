@@ -9,6 +9,6 @@ We usually have a printed sheet of paper with the unordered names of our guests.
 *Why I'm proud*  
 I'm proud of this simple app because it makes my work as a host more easy and fun! It's awesome to listen to guests asking me: "Oh.. are you checkin me with your mobile phone? That's cool, which app is that? did you download it from the App Store?" :)
 
-To load this app please go to: (http://boomerangcheckin.herokuapp.com, "boomerangcheckin.herokuapp.com")
+To load this app please go to: [http://boomerangcheckin.herokuapp.com](http://boomerangcheckin.herokuapp.com)
 
 /Americo
